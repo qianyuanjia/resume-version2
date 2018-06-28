@@ -1,0 +1,208 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Microsoft YaHei';
+	list-style: none;
+}
+*::after,*::before{
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+.clearfix::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/*start部分*/
+.start{
+	background: url(../images/intro3.jpeg);
+	height: 100vh;
+	background-size: cover;
+	position: relative;
+	z-index: 0;
+}
+.start::before{
+	content: '';
+	display: block;
+	background-color: rgba(0,0,0,0.6);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+.start header{
+	padding: 20px 30px;
+	color: #fff;
+	position: absolute;
+	width: 100%;
+	z-index: 3;
+}
+.start .logo{
+	font-size: 26px;
+	font-weight: bold;
+	float: left;
+}
+.start .menu-bar{
+	float: right;
+}
+
+.start .menu-bar li{
+	float: left;
+	font-size: 14px;
+	margin-left: 5px;
+	margin-right: 5px; 
+	padding: 12px 0;
+	position: relative;
+	letter-spacing: 10px;
+}
+.start .menu-bar li a{
+	padding-left: 10px;
+}
+.start .menu-bar li.active::before{
+	content: '';
+	display: block;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	height: 80%;
+	width: 50%;
+	position: absolute;
+	top: 10%;
+	left: 25%;
+}
+
+.start .menu-bar li:hover{
+	cursor: pointer;
+	color: #BCBCBC;
+}
+
+.start .menu-bar li:not(.active):hover::after{
+	content: '';
+	display: block;
+	border-bottom: 1px solid #fff;
+	height: 80%;
+	position: absolute;
+	top: 10%;
+	width: 70%;
+	left: 15%;
+	animation: botbar 0.3s;
+}
+@keyframes botbar{
+	from{
+		width: 0;
+	}
+	to{
+		width: 70%;
+	}
+}
+.particles-js-canvas-el{
+	position: absolute;
+	top: 0;
+}
+
+.start section{
+	color:#fff;
+	font-size: 45px;
+	font-weight: bold;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 2;
+}
+.start section .text_mutation{
+	margin-left: 20px;
+	display: inline-block;
+	position: relative;
+	color: transparent;
+}
+.start section .text_mutation.hide{
+	display: none;
+}
+.start section .text_mutation.state-1::after,
+.start section .text_mutation.state-2::after,
+.start section .text_mutation.state-3::after,
+.start section .text_mutation.state-4::after,
+.start section .text_mutation.state-5::after,
+.start section .text_mutation.state-6::after{
+	box-sizing: content-box;
+	display: inline-block;
+	height: 63px;
+	vertical-align: top;
+	position: absolute;
+	left: 0;
+	border-right: 5px solid #fff;
+	overflow: hidden;
+	color: #fff;
+}
+.start section .text_mutation.state-1::after{
+	content: 'QianYuanJia';
+	width: 100%;
+	animation: blink .6s infinite,
+			   shrink 1s 2s forwards;
+	
+}
+.start section .text_mutation.state-2::after{
+	content: 'Creative';
+	width: 0%;
+	animation: blink .6s infinite,
+			   shrink 1s 2s reverse forwards;
+}
+.start section .text_mutation.state-3::after{
+	content: 'Creative';
+	width: 100%;
+	animation: blink .6s infinite,
+			   shrink 1s 2s forwards;
+}
+.start section .text_mutation.state-4::after{
+	content: 'Experienced';
+	width: 0%;
+	animation: blink .6s infinite,
+			   shrink 1s 2s reverse forwards;
+}
+.start section .text_mutation.state-5::after{
+	content: 'Experienced';
+	width: 100%;
+	animation: blink .6s infinite,
+			   shrink 1s 2s forwards;
+}
+.start section .text_mutation.state-6::after{
+	content: 'QianYuanJia';
+	width: 0%;
+	animation: blink .6s infinite,
+			   shrink 1s 2s reverse forwards;	
+}
+.start section .wrap{
+	width: 400px;
+}
+.start section .wrap>span{
+	float: left;
+}
+@keyframes blink{
+	from{
+		border-right-color: #fff;
+	}
+	to{
+		border-right-color: transparent;
+	}
+}
+@keyframes shrink{
+	from{
+		width: 100%;
+	}
+	to{
+		width: 0%;
+	}
+}
+
+
+
+
+
