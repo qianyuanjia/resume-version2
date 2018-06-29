@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "echarts": "^4.1.0",
     "jquery": "^3.3.1",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "scrollreveal": "^3.4.0",
+    "swiper": "^4.3.3",
+    "typed.js": "^2.0.8"
   }
 }

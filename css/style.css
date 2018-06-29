@@ -19,10 +19,18 @@ a{
 	clear: both;
 }
 
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+
 /*start部分*/
 .start{
 	background: url(../images/intro3.jpeg);
 	height: 100vh;
+	width: 100%;
 	background-size: cover;
 	position: relative;
 	z-index: 0;
@@ -37,23 +45,29 @@ a{
 	z-index: 1;
 }
 
-.start header{
+.topmenu{
 	padding: 20px 30px;
 	color: #fff;
 	position: absolute;
 	width: 100%;
 	z-index: 3;
+	transition: background 0.5s;
 }
-.start .logo{
+.topmenu.active{
+	background: #000;
+	position: fixed;
+	top: 0;
+}
+.topmenu .logo{
 	font-size: 26px;
 	font-weight: bold;
 	float: left;
 }
-.start .menu-bar{
+.topmenu .menu-bar{
 	float: right;
 }
 
-.start .menu-bar li{
+.topmenu .menu-bar li{
 	float: left;
 	font-size: 14px;
 	margin-left: 5px;
@@ -62,10 +76,11 @@ a{
 	position: relative;
 	letter-spacing: 10px;
 }
-.start .menu-bar li a{
+.topmenu .menu-bar li a{
 	padding-left: 10px;
 }
-.start .menu-bar li.active::before{
+
+.topmenu .menu-bar li.active::before{
 	content: '';
 	display: block;
 	border-top: 1px solid #fff;
@@ -75,14 +90,15 @@ a{
 	position: absolute;
 	top: 10%;
 	left: 25%;
+	z-index: -1;
 }
 
-.start .menu-bar li:hover{
+.topmenu .menu-bar li:hover{
 	cursor: pointer;
 	color: #BCBCBC;
 }
 
-.start .menu-bar li:not(.active):hover::after{
+.topmenu .menu-bar li:not(.active):hover::after{
 	content: '';
 	display: block;
 	border-bottom: 1px solid #fff;
@@ -92,6 +108,7 @@ a{
 	width: 70%;
 	left: 15%;
 	animation: botbar 0.3s;
+	z-index: -1;
 }
 @keyframes botbar{
 	from{
@@ -108,7 +125,7 @@ a{
 
 .start section{
 	color:#fff;
-	font-size: 45px;
+	font-size: 50px;
 	font-weight: bold;
 	height: 100%;
 	display: flex;
@@ -117,92 +134,420 @@ a{
 	position: relative;
 	z-index: 2;
 }
-.start section .text_mutation{
-	margin-left: 20px;
-	display: inline-block;
-	position: relative;
-	color: transparent;
-}
-.start section .text_mutation.hide{
-	display: none;
-}
-.start section .text_mutation.state-1::after,
-.start section .text_mutation.state-2::after,
-.start section .text_mutation.state-3::after,
-.start section .text_mutation.state-4::after,
-.start section .text_mutation.state-5::after,
-.start section .text_mutation.state-6::after{
-	box-sizing: content-box;
-	display: inline-block;
-	height: 63px;
-	vertical-align: top;
-	position: absolute;
-	left: 0;
-	border-right: 5px solid #fff;
-	overflow: hidden;
+
+
+.start footer{
 	color: #fff;
+	position: absolute;
+	z-index: 2;
+	bottom: 70px;
+	left: 50%;
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transform: translateX(-50%);
 }
-.start section .text_mutation.state-1::after{
-	content: 'QianYuanJia';
-	width: 100%;
-	animation: blink .6s infinite,
-			   shrink 1s 2s forwards;
+.start footer::before{
+	content:'';
+	display: block;
+	width: 2px;
+	background: #fff;
+	height: 50px;
+}
+.start footer .text_scroll{
+	padding: 10px 0;
+}
+.start footer svg{
+	font-size: 3em;
+}
+
+/*关于我的部分*/
+.aboutme{
+	background: #fff;
+	padding: 100px 50px;
 	
 }
-.start section .text_mutation.state-2::after{
-	content: 'Creative';
-	width: 0%;
-	animation: blink .6s infinite,
-			   shrink 1s 2s reverse forwards;
+.aboutme .topwrap{
+	display: flex;
+	justify-content: space-between;	
+	margin-bottom: 80px;
 }
-.start section .text_mutation.state-3::after{
-	content: 'Creative';
+.aboutme .topwrap .mywords{
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.aboutme .topwrap .mywords h2{
+	color: #999;
+	margin-bottom: 20px;
+}
+.aboutme .topwrap .mywords .basic_info{
+	font-size: 16px;
+	line-height: 1.8;
+}
+.aboutme .topwrap .mywords hr{
+	border:none;
+	border:1px solid #ccc;
+	margin: 30px 0;
+}
+.aboutme .topwrap .mywords .code_wrap{
+	display: flex;
+	justify-content: flex-start;
+}
+.aboutme .topwrap .mywords .code_pic{
+	background:#48A89E; 
+	border:14px solid #48A89E;
+	border-bottom:none;
+	color: #fff;
+	text-align: center;
+	margin-right: 40px;
+}
+.aboutme .topwrap .mywords .code_pic img{
+	width: 100px;
+}
+
+
+.aboutme .self_intro{
+	width: 60%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 5px 2px rgba(100,100,100,0.4);
+	justify-content: space-between;
+}
+.aboutme .self_intro .wrap{
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+}
+.aboutme .self_intro .picFrame{
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.aboutme .self_intro .detail{
+	width: 50%;
+}
+.aboutme .self_intro .detail .hello{
+	font-size: 16px;
+	color: #F5E7FF;
+	background: #E6686A;
+	padding: 4px 15px;
+	position: relative;
+}
+.aboutme .self_intro .detail .hello::after{
+	content: '';
+	display: block;
+	border:6px solid #E6686A;
+	width:0;
+	border-bottom-color:transparent;
+	border-right-color:transparent;
+	position: absolute;
+	top: 100%;
+	left: 4px;
+}
+.aboutme .self_intro .detail .myName{
+	font-size: 32px;
+	margin: 36px 0 8px 0;
+}
+.aboutme .self_intro .detail .job{
+	font-weight: normal;
+	font-size: 16px;
+	margin-bottom: 22px;
+}
+.aboutme .self_intro .detail hr{
+	border:none;
+	border: 1px solid #DEDEDE;
 	width: 100%;
-	animation: blink .6s infinite,
-			   shrink 1s 2s forwards;
+	margin-bottom: 26px;
 }
-.start section .text_mutation.state-4::after{
-	content: 'Experienced';
-	width: 0%;
-	animation: blink .6s infinite,
-			   shrink 1s 2s reverse forwards;
+.aboutme .self_intro .detail .self *{
+	float: left;
+	padding: 4px 0;
 }
-.start section .text_mutation.state-5::after{
-	content: 'Experienced';
-	width: 100%;
-	animation: blink .6s infinite,
-			   shrink 1s 2s forwards;
+.aboutme .self_intro .detail .self dt{
+	width: 30%;
+	font-weight: bold;
 }
-.start section .text_mutation.state-6::after{
-	content: 'QianYuanJia';
-	width: 0%;
-	animation: blink .6s infinite,
-			   shrink 1s 2s reverse forwards;	
+.aboutme .self_intro .detail .self dd{
+	width: 70%;
+	color: #9DA0AF;
 }
-.start section .wrap{
-	width: 400px;
+.aboutme .self_intro .about_bot{
+	background: #E6686A;
+	text-align: center;
+	
 }
-.start section .wrap>span{
+.aboutme .self_intro .about_bot .wrap{
+	padding: 10px 0;
+}
+.aboutme .self_intro .about_bot a{
+	margin:0 23px;
+	padding: 5px;
+	display: inline-block;
+	border-radius: 50%;
+}
+.aboutme .self_intro .about_bot svg{
+	fill: #fff;
+	width: 30px;
+	height: 30px;
+	vertical-align: top;
+}
+.aboutme .self_intro .about_bot a:hover{
+	background: #D05E60;
+}
+
+
+
+
+/*##############*/
+.skillbar {
+	position:relative;
+	display:block;
+	margin-bottom:15px;
+	width:100%;
+	background:#eee;
+	height:35px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-webkit-transition:0.4s linear;
+	-moz-transition:0.4s linear;
+	-ms-transition:0.4s linear;
+	-o-transition:0.4s linear;
+	transition:0.4s linear;
+	-webkit-transition-property:width, background-color;
+	-moz-transition-property:width, background-color;
+	-ms-transition-property:width, background-color;
+	-o-transition-property:width, background-color;
+	transition-property:width, background-color;
+}
+
+.skillbar-title {
+	position:absolute;
+	top:0;
+	left:0;
+width:110px;
+	font-weight:bold;
+	font-size:13px;
+	color:#ffffff;
+	background:#6adcfa;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.skillbar-title span {
+	display:block;
+	background:rgba(0, 0, 0, 0.1);
+	padding:0 20px;
+	height:35px;
+	line-height:35px;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.skillbar-bar {
+	height:35px;
+	width:0px;
+	background:#6adcfa;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+.skill-bar-percent {
+	position:absolute;
+	right:10px;
+	top:0;
+	font-size:11px;
+	height:35px;
+	line-height:35px;
+	color:#ffffff;
+	color:rgba(0, 0, 0, 0.4);
+}
+.skill{
+	display: flex;
+}
+.skillwrap{
+	width: 50%;
+}
+
+#skillgraph{
+	width: 50%;
+	height:280px;
+}
+
+
+/*######大学生活##########*/
+#site-life{
+	position: relative;
+	padding-bottom: 50px;
+}
+#site-life .top{
+	height: 120px;
+	line-height: 120px;
+	color: gold;
+	font-size: 40px;
+	text-align: center;
+}
+#site-life .year{
+	width: 300px;
+	height: 220px;
+	color: #fff;
+	border: 1px dotted cyan;
+	padding:20px 40px;
+	border-radius: 20px;
+	background: rgba(255,255,255,0.1);
+	margin-bottom: 40px;
+}
+.year .time{	
+	font-weight: bold;
+	font-size: 20px;
+}
+.year .event{
+	font-size: 14px;
+	line-height: 30px;
+	color: #25C6FC;
+}
+#site-life .list{
+	margin: 0 250px;
+	overflow: hidden;
+}
+.list .left{
 	float: left;
 }
-@keyframes blink{
-	from{
-		border-right-color: #fff;
-	}
-	to{
-		border-right-color: transparent;
-	}
+.list .right{
+	float: right;
 }
-@keyframes shrink{
-	from{
-		width: 100%;
-	}
-	to{
-		width: 0%;
-	}
+
+#idx3{
+	background: #212121;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+
 }
 
 
+/*####轮播##*/
+.works{
+	margin-bottom: 50px;
+}
+.works .Img{
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+}
+.title{
+	font-size: 34px;
+	text-align: center;
+	margin: 32px 0;
+}
+.works .swiper-container {
+    width: 600px;
+    height: 450px;
+}
 
+.works .swiper-button-prev,
+.works .swiper-button-next{
+	background-color: #fff;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	top:0;
+	bottom: 0;
+	margin: auto;
+	z-index: 1;
+}
+
+
+/*#######留言#####*/
+.messages{
+	max-width: 940px;
+	margin:0 auto;
+}
+
+#messageForm label{
+	color: #333333;
+	font-weight: bold;
+	display: block;
+	padding: 10px;
+}
+
+#messageForm input[type=text],
+#messageForm textarea
+{
+	padding: 7px 14px;
+	border: none;
+	border: 1px solid #CCCCCC;
+	border-radius: 6px;
+	outline: none;
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+#messageForm input[type=text]:focus,
+#messageForm textarea:focus{
+	border-color: #66AFE9;
+}
+#messageForm textarea{
+	height: 100px;
+	resize: none;
+	margin-bottom: 14px;
+}
+.btns{
+	margin-bottom: 32px;
+}
+#messageForm input[type=submit],
+#messageForm input[type=reset]{
+	padding: 6px 14px;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	border-radius: 6px;
+	margin-left: 15px;
+	float: right;
+	background: #57B257;
+	cursor: pointer;
+}
+#messageForm input[type=reset]{
+	background: #C63632;
+}
+.showMessages{
+	border-bottom: 1px solid #ccc;
+}
+.showMessages li{
+	border: 1px solid #ccc;
+	padding: 15px;
+	border-bottom: none;
+	background: #fff;
+}
+.showMessages li:hover{
+	background: #f1f1f1;
+}
+
+
+/*#######end#####*/
+.end{
+	margin-top: 50px;
+	height: 100px;
+	background: #000;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 

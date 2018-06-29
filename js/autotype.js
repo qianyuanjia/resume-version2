@@ -1,14 +1,17 @@
 !(function(){
-	var textArr=['QianYuanJia','Creative','Experienced']
-	var idx=0;
-	setInterval(function(){
-		$('.text_mutation').addClass('hide')
-		idx++
-		if(idx==6){
-			idx=0
-		}
-		// $('.text_mutation').html(textArr[idx==6?0:Math.floor(idx/2)])
-		$('.text_mutation').eq(idx).removeClass('hide')
-	},4000)
+	var options = {
+	  strings: ["","I'm QianYuanJia","I'm Creative","I'm Experienced"],
+	  typeSpeed: 80,
+	  loop :true,
+	  fadeOut: false,
+	  fadeOutClass: 'typed-fade-out',
+	  fadeOutDelay: 500,
+	  backSpeed: 80,
+	  startDelay:1000,
+	  showCursor:false
+
+}
+var typed = new Typed(".autotype", options);
 
 })()
+

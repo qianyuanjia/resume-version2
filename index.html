@@ -4,43 +4,235 @@
 	<meta charset="UTF-8">
 	<title>我的个人简历</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/particles.js/particles.js"></script>
+	<script src="//at.alicdn.com/t/font_665629_thjas5p1dbm.js"></script>
+	<script src="node_modules/typed.js/lib/typed.min.js"></script>
+	<script src="node_modules/echarts/dist/echarts-en.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.7.0/dist/av-min.js"></script>
+	<script type="text/javascript" src="node_modules/scrollreveal/dist/scrollreveal.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 </head>
 <body>
-	<div class="start" id="particles-js">
-		<header class="clearfix">
-			<div class="logo">QYJ.</div>
-			<ul class="menu-bar clearfix">
-				<li class="active"><a href="###">开始</a></li>
-				<li><a href="###">关于我</a></li>
-				<li><a href="###">技能</a></li>
-				<li><a href="###">作品</a></li>
-				<li><a href="###">博客</a></li>
-				<li><a href="###">留言</a></li>
-			</ul>
-		</header>
-		<section>
-			<div class="wrap clearfix">
-				<span>I'm</span>
-				<span>
-					<span class="text_mutation state-1">QianYuanJia</span>
-					<span class="text_mutation state-2 hide">Creative</span>
-					<span class="text_mutation state-3 hide">Creative</span>
-					<span class="text_mutation state-4 hide">Experienced</span>
-					<span class="text_mutation state-5 hide">Experienced</span>
-					<span class="text_mutation state-6 hide">QianYuanJia</span>
-				</span>
-			</div>
-		</section>
+	<header class="clearfix topmenu">
+		<div class="logo">QYJ.</div>
+		<ul class="menu-bar clearfix">
+			<li class="active"><a href="#site-particles">开始</a></li>
+			<li><a href="#site-about">关于我</a></li>
+			<li><a href="#site-life">生活</a></li>
+			<li><a href="#site-work">作品</a></li>
+			<li><a href="http://qianyuanjia.github.io/" target="_blank">博客</a></li>
+			<li><a href="#site-message">留言</a></li>
+		</ul>
+	</header>
+	<div class="start" id="site-particles">
+		<section class="autotype"></section>
 		<footer>
-			<div>SCROLL DOWN</div>
+			<div class="text_scroll">SCROLL DOWN</div>
+			<svg class="icon" aria-hidden="true">
+    			<use xlink:href="#icon-weibiaoti-"></use>
+			</svg>
 		</footer>	
 	</div>
+
+	<section class="aboutme" id="site-about">
+		<div class="topwrap">
+			<div class="mywords">
+				<h2>基本信息</h2>
+				<p class="basic_info">
+					我是2014级浙江大学本科毕业生，自学前端一年，欲应聘贵公司的前端工程师岗位，本人熟悉多种前端框架以及UI框架，能适应移动端、PC端的开发，本人能够阅读前端的各种文档，可以快速上手项目，另外，本人也有微信小程序的开发经验。
+				</p>
+				<hr>
+				<div class="code_wrap">
+					<div class="code_pic"><img src="images/weixin.jpg" alt="weixin"><p>我的微信</p></div>
+					<div class="code_pic"><img src="images/blog.png" alt="博客"><p>我的博客</p></div>		
+				</div>
+			</div>
+			<div class="self_intro">
+			<div class="wrap">
+			<div class="picFrame">
+				<img src="images/photo.jpg" alt="photo">
+			</div>
+			<div class="detail">
+				<span class="hello">Hello</span>
+				<h1 class="myName">钱圆佳</h1>
+				<h2 class="job">前端开发工程师</h2>
+				<hr>
+				<dl class="self">
+					<dt>年龄</dt>
+					<dd>23</dd>
+					<dt>所在城市</dt>
+					<dd>杭州</dd>
+					<dt>邮箱</dt>
+					<dd>qianyuanjia@qq.com</dd>
+					<dt>手机</dt>
+					<dd>17816872***</dd>
+				</dl>
+			</div>
+			</div>
+			<div class="about_bot">
+				<div class="wrap">				
+				<a href="http://qianyuanjia.github.io/" target="_blank">
+					<svg class="icon" aria-hidden="true">
+					    <use xlink:href="#icon-ego-blog"></use>
+					</svg>
+				</a>
+				<a href="https://github.com/qianyuanjia/" target="_blank">
+					<svg class="icon" aria-hidden="true">
+					    <use xlink:href="#icon-githublogo"></use>
+					</svg>
+				</a>
+				<a href="#">
+					<svg class="icon" aria-hidden="true">
+					    <use xlink:href="#icon-weibo"></use>
+					</svg>
+				</a>
+				<a href="#">
+					<svg class="icon" aria-hidden="true">
+					    <use xlink:href="#icon-twitter"></use>
+					</svg>
+				</a>
+			</div>
+			</div>
+		</div>
+		</div>
+		
+		<!-- <div id="skillgraph"></div> -->
+		<div class="skill">
+		<div class="skillwrap">
+		<div class="skillbar clearfix " data-percent="95%">
+	<div class="skillbar-title" style="background: #d35400;"><span>HTML5</span></div>
+	<div class="skillbar-bar" style="background: #e67e22;"></div>
+	<div class="skill-bar-percent">95%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="80%">
+	<div class="skillbar-title" style="background: #2980b9;"><span>CSS3</span></div>
+	<div class="skillbar-bar" style="background: #3498db;"></div>
+	<div class="skill-bar-percent">80%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="90%">
+	<div class="skillbar-title" style="background: #2c3e50;"><span>jQuery</span></div>
+	<div class="skillbar-bar" style="background: #2c3e50;"></div>
+	<div class="skill-bar-percent">90%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="60%">
+	<div class="skillbar-title" style="background: #46465e;"><span>NodeJs</span></div>
+	<div class="skillbar-bar" style="background: #5a68a5;"></div>
+	<div class="skill-bar-percent">60%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="75%">
+	<div class="skillbar-title" style="background: #333333;"><span>JavaScript</span></div>
+	<div class="skillbar-bar" style="background: #525252;"></div>
+	<div class="skill-bar-percent">75%</div>
+</div> <!-- End Skill Bar -->
+
+<div class="skillbar clearfix " data-percent="70%">
+	<div class="skillbar-title" style="background: #27ae60;"><span>Vue</span></div>
+	<div class="skillbar-bar" style="background: #2ecc71;"></div>
+	<div class="skill-bar-percent">70%</div>
+</div></div> <!-- End Skill Bar -->
+	<div id="skillgraph"></div></div>
+	</section>
+
+	<!-- ###################### -->
+<div id="site-life">
+		<h2 class="top">My College Life</h2>
+		<div class="list">
+			<div class="left">				
+				<div class="year">
+					<p class="time">2014-2015</p>
+					<p class="event">在大一期间参加过学园新闻网络社团，专门从事新闻推送和海报制作以及活动策划，获得本年度三等学业奖学金。</p>
+				</div>
+
+				<div class="year">
+					<p class="time">2015-2016</p>
+					<p class="event">大二期间担任班级信息员，多次参与青年志愿者活动，在参与社会工作的同时，也没有放松学业，专业前十，获得本年度三等学业奖学金。</p>
+				</div>
+			</div>		
+
+			<div class="right">			
+				<div class="year">
+					<p class="time">2016-2017</p>
+					<p class="event">大三期间参与科研训练，参与了省级创新项目，并且组织参与了SRTP项目，均取得了优秀的成绩，并且获得了本年度三等学业奖学金。</p>
+				</div>
+
+				<div class="year">
+					<p class="time">2017-至今</p>
+					<p class="event">大四比较忙碌，认真完成毕业设计项目，并且为步入社会工作作准备。空余时间自学linux和网页设计。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="works" id="site-work">
+		<h3 class="title">作品集</h3>
+	
+	<div class="Img">
+		<div class="clearfix slide-up">	
+			<!-- Slider main container -->
+			<div class="swiper-container">
+			    <!-- Additional required wrapper -->
+			    <div class="swiper-wrapper">
+			        <!-- Slides -->
+			        <div class="swiper-slide"><img src="./images/work1.jpg" alt="work1"></div>
+			        <div class="swiper-slide"><img src="./images/work2.jpg" alt="work2"></div>
+			        <div class="swiper-slide"><img src="./images/work3.jpg" alt="work3"></div>
+			    </div>
+			    <!-- If we need pagination -->
+			    <div class="swiper-pagination"></div>
+
+			    <!-- If we need navigation buttons -->
+			</div>	
+			    <div class="swiper-button-prev"></div>
+			    <div class="swiper-button-next"></div>
+		</div>		
+	</div>
+
+	</section>
+
+	<section class="remainmsg" id="site-message">
+		<h3 class="title" id="site-Message">留言</h3>
+	<section class="messages">
+		<form action="###" id="messageForm">
+			<label for="who">姓名</label>
+			<input type="text" name="who" id="who">
+			<label for="ta">留言</label>
+			<textarea name="words" id="ta"></textarea>
+			<div class="btns clearfix">			
+				<input type="submit" value="提交">	
+				<input type="reset" value="清空">	
+			</div>
+		</form>
+		<ul class="showMessages"></ul>
+	</section>
+	</section>
+	<footer class="end">
+		<span>2018&copyQianyuanjia</span>
+	</footer>
 	<script>
 		/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-		particlesJS.load('particles-js', 'particles.json');
+		particlesJS.load('site-particles', 'particles.json');
 	</script>
 	<script src="js/autotype.js"></script>
+	<script src="js/floatScollDown.js"></script>
+	<script src="js/topmenu.js"></script>
+	<script src="js/graph.js"></script>
+	<script src="js/skillbar.js"></script>
+	<script src="js/graph.js"></script>
+	<script src="js/canvasbuble.js"></script>
+	<script src="js/swiper.js"></script>
+	<script src="js/message_modle.js"></script>
+	<script src="js/view.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+	<script src="js/message.js"></script>
+	<script type="text/javascript" src="js/scrollreveal.js"></script>
+	<script type="text/javascript" src="js/easyscroll.js"></script>
+	<script type="text/javascript" src="js/menubaractive.js"></script>
 </body>
 </html>
