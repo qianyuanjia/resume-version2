@@ -1,1 +1,6 @@
-node_modules
+/node_modules/*
+!/node_modules/jquery/dist/jquery.min.js
+!/node_modules/particles.js/particles.js
+!/node_modules/typed.js/lib/typed.min.js
+!/node_modules/echarts/dist/echarts-en.min.js
+!/node_modules/scrollreveal/dist/scrollreveal.min.js
